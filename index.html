@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroForge Nexus | Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="landing">
+
+        <section id="roleSelection">
+            <div class="split">
+                <div class="split-left">
+                    <span class="pill">NeuroForge Nexus</span>
+                    <h1>Engineering the Future of Software Development</h1>
+                    <p>One intelligent platform. Five specialized roles. One connected software lifecycle.</p>
+                    <p class="hint">Select your role to continue &rarr;</p>
+                </div>
+                <div class="role-list">
+                    <div class="role-row c-admin" onclick="selectRole('Admin')">
+                        <div class="role-icon">🛡️</div>
+                        <div class="role-text"><h3>Admin</h3><p>Manage users, access permissions and system configurations.</p></div>
+                        <span class="arrow">&rarr;</span>
+                    </div>
+                    <div class="role-row c-pm" onclick="selectRole('Project Manager')">
+                        <div class="role-icon">📋</div>
+                        <div class="role-text"><h3>Project Manager</h3><p>Organize projects, plan sprints and assign tasks.</p></div>
+                        <span class="arrow">&rarr;</span>
+                    </div>
+                    <div class="role-row c-dev" onclick="selectRole('Developer')">
+                        <div class="role-icon">💻</div>
+                        <div class="role-text"><h3>Developer</h3><p>Manage assigned development tasks and contributions.</p></div>
+                        <span class="arrow">&rarr;</span>
+                    </div>
+                    <div class="role-row c-test" onclick="selectRole('Tester')">
+                        <div class="role-icon">🧪</div>
+                        <div class="role-text"><h3>Tester</h3><p>Execute tests, validate quality and report bugs.</p></div>
+                        <span class="arrow">&rarr;</span>
+                    </div>
+                    <div class="role-row c-ops" onclick="selectRole('DevOps Engineer')">
+                        <div class="role-icon">⚙️</div>
+                        <div class="role-text"><h3>DevOps Engineer</h3><p>Manage builds, deployments and monitoring.</p></div>
+                        <span class="arrow">&rarr;</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LOGIN / REGISTER -->
+        <div class="auth-wrap" id="authWrap" style="display:none;">
+            <div class="form-box">
+
+                <h1 class="brand">NeuroForge</h1>
+
+                <div class="auth-tabs">
+                    <button id="tabLogin" class="active" onclick="showLogin()">Login</button>
+                    <button id="tabRegister" onclick="showRegister()">Register</button>
+                </div>
+
+                <div id="loginForm" style="display:none;">
+                    <h2 id="selectedRoleTitle">Welcome Back</h2>
+                    <p class="form-subtitle">Login to your account</p>
+
+                    <label>Email Address</label>
+                    <input type="email" id="loginEmail" placeholder="Enter your email">
+
+                    <label>Password</label>
+                    <div class="pw-wrap">
+                        <input type="password" id="loginPassword" placeholder="Enter your password">
+                        <button type="button" class="eye" onclick="togglePw('loginPassword', this)" title="Show / hide password">👁️</button>
+                    </div>
+
+                    <button class="primary-btn" onclick="login()">Login</button>
+
+                    <p class="switch-text" id="registerLink">
+                        Don't have an account?
+                        <a href="#" onclick="showRegister(); return false;">Register</a>
+                    </p>
+
+                    <p class="switch-text">
+                        <a href="#" onclick="backToRoles(); return false;">Back to Roles</a>
+                    </p>
+                </div>
+
+                <div id="registerForm" style="display:none;">
+                    <h2>Create Account</h2>
+                    <p class="form-subtitle">Register as a new user</p>
+
+                    <label>Full Name</label>
+                    <input type="text" id="regName" placeholder="Enter your full name">
+
+                    <label>Email Address</label>
+                    <input type="email" id="regEmail" placeholder="Enter your email">
+
+                    <label>Password</label>
+                    <div class="pw-wrap">
+                        <input type="password" id="regPassword" placeholder="Minimum 6 characters">
+                        <button type="button" class="eye" onclick="togglePw('regPassword', this)" title="Show / hide password">👁️</button>
+                    </div>
+
+                    <label>Role</label>
+                    <select id="regRole" disabled>
+                        <option value="">Select Your Role</option>
+                        <option value="Project Manager">Project Manager</option>
+                        <option value="Developer">Developer</option>
+                        <option value="Tester">Tester</option>
+                        <option value="DevOps Engineer">DevOps Engineer</option>
+                    </select>
+
+                    <button class="primary-btn" onclick="register()">Create Account</button>
+
+                    <p class="switch-text">
+                        Already have an account?
+                        <a href="#" onclick="showLogin(); return false;">Login</a>
+                    </p>
+                </div>
+
+                <p id="message" class="message"></p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
