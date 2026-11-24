@@ -612,3 +612,7 @@ td {
 .sidebar .side-logout { margin-top: auto; background: #7f1d1d; color: #fecaca; }
 .sidebar .side-logout:hover { background: #dc2626; color: white; }
 @media (max-width: 800px) { .sidebar .side-logout { margin-top: 0; } }
+
+/* eye icon colour */
+.eye { color: #9ca3af; display: flex; align-items: center; justify-content: center; }
+.eye:hover { color: #60a5fa; }
